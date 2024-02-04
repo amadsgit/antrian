@@ -110,11 +110,11 @@
                                     <div class="align-items-center">
                                         <!-- tampilan antrian dipanggil -->
                                         <input type="text" id="valhuruf" class="text-end bg-white text-primary blink" style="border:none;width:140px;font-size:8em;font-weight:bold;"></input>
-                                        <span class="blink text-primary" style="font-size:9em;">-</span> 
+                                        <span class="blink text-primary" style="font-size:8em;">-</span> 
                                         <input type="text" id="valnomor" class="text-start text-primary bg-white blink" style="border:none;width:240px;font-size:8em;font-weight:bold;"></input><br>
                                         <input type="text" class="text-success" id="valunama" style="text-align:center;border:none;font-size:2em" disabled>
 
-                                        <span class="d-flex pt-1 font-size:2em"><img src="images/next.gif" width="90"><b>Ke:</b>
+                                        <span class="d-flex pt-1"><img src="images/next.gif" width="90"><b>Ke:</b>
                                         <input type="text" id="valruang" class="text-end bg-white text-bold" style="font-size:2em;border:none;width:150px;font-weight:bold;" disabled></input>
                                         <input type="text" id="valtujuan" class="text-start bg-white" style="font-size:2em;border:none;width:230px;font-weight:bold;" disabled></input>
                                         </span>
@@ -126,7 +126,7 @@
                             <div class="col-lg-6 mb-lg-0 p-0 m-0" style="align-items:center;">
                                 <div class=" text-center">
                                     <span style="font-size:1.3rem;font-weight:bold;" class="text-white"><marquee behavior="" direction="">SELAMAT DATANG DI UPTD PUSKESMAS CIKALAPA KABUPATEN SUBANG ~ WILUJENG SUMPING ~ CIKALAPA EDUN ~ EFEKTIF DINAMIS UNGGUL DAN NYAMAN ~ KESEHATAN ANDA ADALAH TUJUAN KAMI ~ SEMOGA LEKAS SEMBUH KEMBALI</marquee></span><hr class="text-white">
-                                    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/jkS6glRPD_o?si=lFw1GWbr15ya-pPE&autoplay=1&mute=1&loop=1&playlist=jkS6glRPD_o" title="YouTube iframe player" frameborder="0" allow="accelerometer;" loop="true"></iframe>
+                                    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/yZIr_vPp-7k?si=RXacfMkC28fDz2OP-pPE&autoplay=1&mute=1&loop=1&playlist=yZIr_vPp-7k" title="YouTube iframe player" frameborder="0" allow="accelerometer;" loop="true"></iframe>
                                 </div>
                             </div>
                     </div>
