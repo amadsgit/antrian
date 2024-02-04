@@ -1,3 +1,7 @@
+<?php
+    include "koneksi.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -102,6 +106,17 @@
                                     <h4 class="mb-2">Ruang Umum</h4>
                                     <!-- <a href="inputantrian.php?huruf=A" target="_blank" class="btn btn-md btn-info">Cetak Kartu Antrian</a> -->
                                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modala">Cetak Antrian</button>
+                                    <button type="button" class="btn btn-info position-relative">
+                                    Mengantri
+                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                        <?php
+                                            $a = mysqli_query($konek, "SELECT * FROM tabelantrian WHERE huruf='A'");
+                                            $query = mysqli_num_rows($a);
+                                            echo $query;
+                                        ?>
+                                        <span class="visually-hidden">antrian</span>
+                                    </span>
+                                    </button>
                                 </div>
                             </div>
                             <!-- anak B -->
@@ -110,6 +125,17 @@
                                 <div class="owl-carousel-info text-center">
                                     <h4 class="mb-2">Ruang Anak</h4>
                                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalb">Cetak Antrian</button>
+                                    <button type="button" class="btn btn-info position-relative">
+                                    Mengantri
+                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                        <?php
+                                            $a = mysqli_query($konek, "SELECT * FROM tabelantrian WHERE huruf='B'");
+                                            $query = mysqli_num_rows($a);
+                                            echo $query;
+                                        ?>
+                                        <span class="visually-hidden">antrian</span>
+                                    </span>
+                                    </button>
                                 </div>
                             </div>
                             <!-- mtbs C -->
@@ -118,6 +144,17 @@
                                 <div class="owl-carousel-info text-center">
                                     <h4 class="mb-2">Ruang MTBS</h4>
                                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalc">Cetak Antrian</button>
+                                    <button type="button" class="btn btn-info position-relative">
+                                    Mengantri
+                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                        <?php
+                                            $a = mysqli_query($konek, "SELECT * FROM tabelantrian WHERE huruf='C'");
+                                            $query = mysqli_num_rows($a);
+                                            echo $query;
+                                        ?>
+                                        <span class="visually-hidden">antrian</span>
+                                    </span>
+                                    </button>
                                 </div>
                             </div>
                             <!-- kiakb D -->
@@ -126,6 +163,17 @@
                                 <div class="owl-carousel-info text-center">
                                     <h4 class="mb-2">Ruang KIA KB</h4>
                                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modald">Cetak Antrian</button>
+                                    <button type="button" class="btn btn-info position-relative">
+                                    Mengantri
+                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                        <?php
+                                            $a = mysqli_query($konek, "SELECT * FROM tabelantrian WHERE huruf='D'");
+                                            $query = mysqli_num_rows($a);
+                                            echo $query;
+                                        ?>
+                                        <span class="visually-hidden">antrian</span>
+                                    </span>
+                                    </button>
                                 </div>
                             </div>
                             <!-- lansia E -->
@@ -134,6 +182,17 @@
                                 <div class="owl-carousel-info text-center">
                                     <h4 class="mb-2">Ruang Lansia</h4>
                                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modale">Cetak Antrian</button>
+                                    <button type="button" class="btn btn-info position-relative">
+                                    Mengantri
+                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                        <?php
+                                            $a = mysqli_query($konek, "SELECT * FROM tabelantrian WHERE huruf='E'");
+                                            $query = mysqli_num_rows($a);
+                                            echo $query;
+                                        ?>
+                                        <span class="visually-hidden">antrian</span>
+                                    </span>
+                                    </button>
                                 </div>
                             </div>
                             <!-- prolanis F -->
@@ -142,6 +201,17 @@
                                 <div class="owl-carousel-info text-center">
                                     <h4 class="mb-2">Ruang Prolanis</h4>
                                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalf">Cetak Antrian</button>
+                                    <button type="button" class="btn btn-info position-relative">
+                                    Mengantri
+                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                        <?php
+                                            $a = mysqli_query($konek, "SELECT * FROM tabelantrian WHERE huruf='F'");
+                                            $query = mysqli_num_rows($a);
+                                            echo $query;
+                                        ?>
+                                        <span class="visually-hidden">antrian</span>
+                                    </span>
+                                    </button>
                                 </div>
                             </div>
                             <!-- gigi G -->
@@ -150,6 +220,17 @@
                                 <div class="owl-carousel-info text-center">
                                     <h4 class="mb-2">Ruang Gigi & Mulut</h4>
                                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalg">Cetak Antrian</button>
+                                    <button type="button" class="btn btn-info position-relative">
+                                    Mengantri
+                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                        <?php
+                                            $a = mysqli_query($konek, "SELECT * FROM tabelantrian WHERE huruf='G'");
+                                            $query = mysqli_num_rows($a);
+                                            echo $query;
+                                        ?>
+                                        <span class="visually-hidden">antrian</span>
+                                    </span>
+                                    </button>
                                 </div>
                             </div>
                             <!-- tindakan H -->
@@ -158,6 +239,17 @@
                                 <div class="owl-carousel-info text-center">
                                     <h4 class="mb-2">Ruang Tindakan</h4>
                                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalh">Cetak Antrian</button>
+                                    <button type="button" class="btn btn-info position-relative">
+                                    Mengantri
+                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                        <?php
+                                            $a = mysqli_query($konek, "SELECT * FROM tabelantrian WHERE huruf='H'");
+                                            $query = mysqli_num_rows($a);
+                                            echo $query;
+                                        ?>
+                                        <span class="visually-hidden">antrian</span>
+                                    </span>
+                                    </button>
                                 </div>
                             </div>
                             <!-- imunisasi I -->
@@ -166,6 +258,17 @@
                                 <div class="owl-carousel-info text-center">
                                     <h4 class="mb-2">Ruang Imunisasi</h4>
                                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modali">Cetak Antrian</button>
+                                    <button type="button" class="btn btn-info position-relative">
+                                    Mengantri
+                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                        <?php
+                                            $a = mysqli_query($konek, "SELECT * FROM tabelantrian WHERE huruf='I'");
+                                            $query = mysqli_num_rows($a);
+                                            echo $query;
+                                        ?>
+                                        <span class="visually-hidden">antrian</span>
+                                    </span>
+                                    </button>
                                 </div>
                             </div>
                             <!-- pelangi J -->
@@ -174,6 +277,17 @@
                                 <div class="owl-carousel-info text-center">
                                     <h4 class="mb-2">Ruang Pelangi</h4>
                                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalj">Cetak Antrian</button>
+                                    <button type="button" class="btn btn-info position-relative">
+                                    Mengantri
+                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                        <?php
+                                            $a = mysqli_query($konek, "SELECT * FROM tabelantrian WHERE huruf='J'");
+                                            $query = mysqli_num_rows($a);
+                                            echo $query;
+                                        ?>
+                                        <span class="visually-hidden">antrian</span>
+                                    </span>
+                                    </button>
                                 </div>
                             </div>
                             <!-- konseling K -->
@@ -182,6 +296,17 @@
                                 <div class="owl-carousel-info text-center">
                                     <h4 class="mb-2">Ruang Konseling</h4>
                                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalk">Cetak Antrian</button>
+                                    <button type="button" class="btn btn-info position-relative">
+                                    Mengantri
+                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                        <?php
+                                            $a = mysqli_query($konek, "SELECT * FROM tabelantrian WHERE huruf='K'");
+                                            $query = mysqli_num_rows($a);
+                                            echo $query;
+                                        ?>
+                                        <span class="visually-hidden">antrian</span>
+                                    </span>
+                                    </button>
                                 </div>
                             </div>
                             <!-- laboratorium L -->
@@ -190,6 +315,17 @@
                                 <div class="owl-carousel-info text-center">
                                     <h4 class="mb-2">Ruang Laboratorium</h4>
                                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modall">Cetak Antrian</button>
+                                    <button type="button" class="btn btn-info position-relative">
+                                    Mengantri
+                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                        <?php
+                                            $a = mysqli_query($konek, "SELECT * FROM tabelantrian WHERE huruf='L'");
+                                            $query = mysqli_num_rows($a);
+                                            echo $query;
+                                        ?>
+                                        <span class="visually-hidden">antrian</span>
+                                    </span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -200,16 +336,15 @@
         <footer>
             <div class="container text-center pt-5">
                 <div class="row align-items-end">
-                    <p><a id="reset_notif" href="resetantrian.php" class="btn btn-sm btn-danger">Reset Antrian</a>
+                    <p><a id="laporan" href="#" class="btn btn-sm btn-primary">Laporan</a> <a id="reset_notif" href="resetantrian.php" class="px-1 btn btn-sm btn-danger">Reset Antrian</a>
                     <?php
-                    include "koneksi.php";
                     $query = mysqli_query($konek, "SELECT * FROM tabelantrian");
                     $data = mysqli_num_rows($query);
-                    echo"<button class='btn btn-sm btn-info' disabled>Antrian hari ini : $data</button></p>"
+                    echo"<button class='btn btn-sm btn-success' disabled>Antrian hari ini : $data</button></p>"
                     ?>
-                    </div>
+                </div>
                 <div class="row align-items-center">
-                        <p class="copyright-text mb-1 text-info">Copyright © 2024 AMD Computer | Mamad Ahmad</p>
+                    <p class="copyright-text mb-1 text-info">Copyright © 2024 AMD Dev | Ma2d Ahmad</p>
                 </div>
             </div>
         </footer>
@@ -229,7 +364,6 @@
                         <input type="text" class="form-control" name="nama" id="nama" required>
                     </div>
                     <div class="modal-footer">
-                        <!-- <a href="inputantrian.php?huruf=A&nama=<?= $nama ?>" target="_blank" class="btn btn-primary">Cetak</a> -->
                         <button type="submit" class="btn btn-primary">Cetak</button>
                     </div>
                 </div>
@@ -250,7 +384,6 @@
                         <input type="text" class="form-control" name="nama" id="nama" required>
                     </div>
                     <div class="modal-footer">
-                        <!-- <a href="inputantrian.php?huruf=A&nama=<?= $nama ?>" target="_blank" class="btn btn-primary">Cetak</a> -->
                         <button type="submit" class="btn btn-primary">Cetak</button>
                     </div>
                 </div>
@@ -271,7 +404,6 @@
                         <input type="text" class="form-control" name="nama" id="nama" required>
                     </div>
                     <div class="modal-footer">
-                        <!-- <a href="inputantrian.php?huruf=A&nama=<?= $nama ?>" target="_blank" class="btn btn-primary">Cetak</a> -->
                         <button type="submit" class="btn btn-primary">Cetak</button>
                     </div>
                 </div>
@@ -292,7 +424,6 @@
                         <input type="text" class="form-control" name="nama" id="nama" required>
                     </div>
                     <div class="modal-footer">
-                        <!-- <a href="inputantrian.php?huruf=A&nama=<?= $nama ?>" target="_blank" class="btn btn-primary">Cetak</a> -->
                         <button type="submit" class="btn btn-primary">Cetak</button>
                     </div>
                 </div>
@@ -313,7 +444,6 @@
                         <input type="text" class="form-control" name="nama" id="nama" required>
                     </div>
                     <div class="modal-footer">
-                        <!-- <a href="inputantrian.php?huruf=A&nama=<?= $nama ?>" target="_blank" class="btn btn-primary">Cetak</a> -->
                         <button type="submit" class="btn btn-primary">Cetak</button>
                     </div>
                 </div>
@@ -334,7 +464,6 @@
                         <input type="text" class="form-control" name="nama" id="nama" required>
                     </div>
                     <div class="modal-footer">
-                        <!-- <a href="inputantrian.php?huruf=A&nama=<?= $nama ?>" target="_blank" class="btn btn-primary">Cetak</a> -->
                         <button type="submit" class="btn btn-primary">Cetak</button>
                     </div>
                 </div>
@@ -355,7 +484,6 @@
                         <input type="text" class="form-control" name="nama" id="nama" required>
                     </div>
                     <div class="modal-footer">
-                        <!-- <a href="inputantrian.php?huruf=A&nama=<?= $nama ?>" target="_blank" class="btn btn-primary">Cetak</a> -->
                         <button type="submit" class="btn btn-primary">Cetak</button>
                     </div>
                 </div>
@@ -376,7 +504,6 @@
                         <input type="text" class="form-control" name="nama" id="nama" required>
                     </div>
                     <div class="modal-footer">
-                        <!-- <a href="inputantrian.php?huruf=A&nama=<?= $nama ?>" target="_blank" class="btn btn-primary">Cetak</a> -->
                         <button type="submit" class="btn btn-primary">Cetak</button>
                     </div>
                 </div>
@@ -397,7 +524,6 @@
                         <input type="text" class="form-control" name="nama" id="nama" required>
                     </div>
                     <div class="modal-footer">
-                        <!-- <a href="inputantrian.php?huruf=A&nama=<?= $nama ?>" target="_blank" class="btn btn-primary">Cetak</a> -->
                         <button type="submit" class="btn btn-primary">Cetak</button>
                     </div>
                 </div>
@@ -418,7 +544,6 @@
                         <input type="text" class="form-control" name="nama" id="nama" required>
                     </div>
                     <div class="modal-footer">
-                        <!-- <a href="inputantrian.php?huruf=A&nama=<?= $nama ?>" target="_blank" class="btn btn-primary">Cetak</a> -->
                         <button type="submit" class="btn btn-primary">Cetak</button>
                     </div>
                 </div>
@@ -439,7 +564,6 @@
                         <input type="text" class="form-control" name="nama" id="nama" required>
                     </div>
                     <div class="modal-footer">
-                        <!-- <a href="inputantrian.php?huruf=A&nama=<?= $nama ?>" target="_blank" class="btn btn-primary">Cetak</a> -->
                         <button type="submit" class="btn btn-primary">Cetak</button>
                     </div>
                 </div>
@@ -460,7 +584,6 @@
                         <input type="text" class="form-control" name="nama" id="nama" required>
                     </div>
                     <div class="modal-footer">
-                        <!-- <a href="inputantrian.php?huruf=A&nama=<?= $nama ?>" target="_blank" class="btn btn-primary">Cetak</a> -->
                         <button type="submit" class="btn btn-primary">Cetak</button>
                     </div>
                 </div>
