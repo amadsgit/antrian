@@ -68,6 +68,7 @@
             var val_nomor = $('#val_nomor').val()
             var val_ruang = $('#val_ruang').val()
             var val_tujuan = $('#val_tujuan').val()
+            var val_nama = $('#val_nama').val()
             $.ajax({
                 url:'inputtampil.php',
                 method:'GET',
@@ -75,7 +76,8 @@
                     val_huruf:val_huruf,
                     val_nomor:val_nomor,
                     val_ruang:val_ruang,
-                    val_tujuan:val_tujuan
+                    val_tujuan:val_tujuan,
+                    val_nama:val_nama,
                 } 
             });
         

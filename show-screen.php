@@ -106,16 +106,17 @@
                             <!-- coloumn antrian dipanggil -->
                             <div class="col-lg-6 mb-1 mb-lg-0" style="align-items:center;">
                                 <div class="custom-block3 text-center shadow">
-                                    <span id="blink" style="font-size:1.5rem;font-weight:bold;" class="text-info">ANTREAN DIPANGGIL</span><hr>
+                                    <span id="blink" style="font-size:1.5rem;font-weight:bold;" class="text-dark">ANTREAN DIPANGGIL</span><hr>
                                     <div class="align-items-center">
                                         <!-- tampilan antrian dipanggil -->
-                                        <input type="text" id="valhuruf" class="text-end bg-white text-primary blink" style="border:none;width:140px;font-size:9em;font-weight:bold;"></input>
-                                        <span class="blink text-primary" style="font-size:8em;">-</span> 
-                                        <input type="text" id="valnomor" class="text-start text-primary bg-white blink" style="border:none;width:240px;font-size:9em;font-weight:bold;"></input><br>
+                                        <input type="text" id="valhuruf" class="text-end bg-white text-primary blink" style="border:none;width:140px;font-size:8em;font-weight:bold;"></input>
+                                        <span class="blink text-primary" style="font-size:9em;">-</span> 
+                                        <input type="text" id="valnomor" class="text-start text-primary bg-white blink" style="border:none;width:240px;font-size:8em;font-weight:bold;"></input><br>
+                                        <input type="text" class="text-success" id="valunama" style="text-align:center;border:none;font-size:2em" disabled>
 
-                                        <span class="d-flex font-size:2em"><img src="images/next.gif" width="90" height=""><b>Ke:</b>
-                                        <input type="text" id="valruang" class="text-end bg-white text-bold" style="font-size:2em;border:none;width:150px;font-weight:bold;"></input>
-                                        <input type="text" id="valtujuan" class="text-start bg-white" style="font-size:2em;border:none;width:230px;font-weight:bold;" ></input>
+                                        <span class="d-flex pt-1 font-size:2em"><img src="images/next.gif" width="90"><b>Ke:</b>
+                                        <input type="text" id="valruang" class="text-end bg-white text-bold" style="font-size:2em;border:none;width:150px;font-weight:bold;" disabled></input>
+                                        <input type="text" id="valtujuan" class="text-start bg-white" style="font-size:2em;border:none;width:230px;font-weight:bold;" disabled></input>
                                         </span>
                                     </div>
                                 </div>
@@ -124,17 +125,8 @@
                             <!-- coloumn videotron -->
                             <div class="col-lg-6 mb-lg-0 p-0 m-0" style="align-items:center;">
                                 <div class=" text-center">
-                                    <span style="font-size:1.3rem;font-weight:bold;" class="text-success"><marquee behavior="" direction="">SELAMAT DATANG DI UPTD PUSKESMAS CIKALAPA KABUPATEN SUBANG ~ WILUJENG SUMPING ~ CIKALAPA EDUN ~ EFEKTIF DINAMIS UNGGUL DAN NYAMAN ~ KESEHATAN ANDA ADALAH TUJUAN KAMI ~ SEMOGA LEKAS SEMBUH KEMBALI</marquee></span><hr class="text-white">
-                                    <!-- <div class="col-lg-6 mb-1 mb-lg-0"> -->
+                                    <span style="font-size:1.3rem;font-weight:bold;" class="text-white"><marquee behavior="" direction="">SELAMAT DATANG DI UPTD PUSKESMAS CIKALAPA KABUPATEN SUBANG ~ WILUJENG SUMPING ~ CIKALAPA EDUN ~ EFEKTIF DINAMIS UNGGUL DAN NYAMAN ~ KESEHATAN ANDA ADALAH TUJUAN KAMI ~ SEMOGA LEKAS SEMBUH KEMBALI</marquee></span><hr class="text-white">
                                     <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/jkS6glRPD_o?si=lFw1GWbr15ya-pPE&autoplay=1&mute=1&loop=1&playlist=jkS6glRPD_o" title="YouTube iframe player" frameborder="0" allow="accelerometer;" loop="true"></iframe>
-                                        <!-- <video controls id="myVideo" style="height:100%;width:100%;" loop="true" autoplay playsInline muted>
-                                            <source src="audio/safety_briefing.mp4" type="video/mp4">
-                                        </video>
-                                        <script>
-                                            let vid = document.getElementById("myVideo");
-                                            vid.volume = 0.2;
-                                        </script> -->
-                                    <!-- </div> -->
                                 </div>
                             </div>
                     </div>

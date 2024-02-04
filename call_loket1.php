@@ -115,7 +115,7 @@
                     </ul>
 
                     <div class="ms-4">
-                        <a href="#" class="btn custom-btn custom-border-btn smoothscroll">Loket 1</a>
+                        <a href="#" class="btn custom-btn btn-secondary custom-border-btn smoothscroll">Loket 1</a>
                     </div>
                 </div>
             </div>
@@ -124,10 +124,7 @@
         <?php
             $tampilkan = mysqli_query($konek, "SELECT * from tabelantrian where loket = '0' order by id");
             $data = mysqli_fetch_array($tampilkan);
-
             $nomor = $data['nomor'];
-            // $huruf = $data['huruf'];
-
         ?>
         <section class="hero-section">
             <div class="container">
@@ -137,14 +134,13 @@
                             <h4 class="section-title" id="kedip">PANGGIL PASIEN</h4>
                         </div>
                     </div>
-
-                    <div class="col-lg-6 col-12 mb-4 mb-lg-0">
+                    <div class="col-lg-6 col-12 mb-lg-0">
                         <div class="custom-block2 text-center" style="justify-content: center;">
                             <span style="font-size:2em;">Nomor Antrian</span><br>
-                            <span class="text-center" style="font-size:8em;">
+                            <span class="text-center">
                                 <?php
                                     if($nomor=='') {
-                                        print "<input type='text' class='text-center bg-white' style='border:none;width:200px;'' value='--' disabled></text>";
+                                        print "<input type='text' class='text-center bg-white' style='border:none;width:200px;'' value='--' disabled>";
                                         print "
                                         <script type='text/javascript'>
                                             var button = document.getElementById('call');
@@ -153,44 +149,13 @@
                                     } else {
                                         $query = mysqli_query($konek, "SELECT * from tabelantrian where id = '$nomor' ");
                                         $data = mysqli_fetch_array($query);
-                                        // print"$data[huruf]-$data[nomor]"; 
-                                        print"<input type='text' id='val_huruf' class='text-end text-primary bg-white blink' style='border:none;width:140px;font-weight:bold;' value='$data[huruf]' disabled></input><span class='text-primary blink'>-</span><input type='text' id='val_nomor' class='text-start text-primary bg-white blink' style='border:none;width:200px;font-weight:bold;' value='$data[nomor]' disabled></input>"; 
+                                        print"<input type='text' id='val_huruf' class='text-end text-primary bg-white blink p-0 m-0' style='border:none;width:140px;font-weight:bold;font-size:100px' value='$data[huruf]' disabled></input><span class='text-primary blink' style='font-size:8em'>-</span><input type='text' id='val_nomor' class='text-start text-primary bg-white blink' style='border:none;width:200px;font-weight:bold;font-size:100px' value='$data[nomor]' disabled></input><br>
+                                        <input type='text' id='val_nama' value='$data[nama]' style='font-size:20px;border:none' class='text-center text-primary' disabled>"; 
                                     }
                                 ?>
                             </span><br>
                             <input type="text" id="val_ruang" class='text-end bg-white' style="font-size:1.5em;border:none;width:200px;" value="<?= $_SESSION['loket'] ?>" disabled></input>
                             <input type="text" id="val_tujuan" class='text-start bg-white' style="font-size:1.5em;border:none;width:140px;" value=" <?= $_SESSION['ruang'] ?>" disabled></input><br>
-                            <!-- <span id="ruang_huruf" style="font-size:2em;">Ruang 
-                                <?php 
-                                    // $query = mysqli_query($konek, "SELECT * from tabelantrian where id = '$nomor' ");
-                                    // $data = mysqli_fetch_array($query);
-                                    // if($data['huruf']=='A') {
-                                    //     echo "Umum";
-                                    // } else if($data['huruf']=='B') {
-                                    //     echo "Lansia";
-                                    // } else if($data['huruf']=='C') {
-                                    //     echo "Tindakan";
-                                    // } else if($data['huruf']=='D') {
-                                    //     echo "Anak";
-                                    // } else if($data['huruf']=='E') {
-                                    //     echo "KIA KB";
-                                    // }  else if($data['huruf']=='F') {
-                                    //     echo "MTBS";
-                                    // } else if($data['huruf']=='G') {
-                                    //     echo "Laboratorium";
-                                    // } else if($data['huruf']=='H') {
-                                    //     echo "Prolanis";
-                                    // } else if($data['huruf']=='I') {
-                                    //     echo "Pelangi";
-                                    // } else if($data['huruf']=='J') {
-                                    //     echo "Gigi & Mulut";
-                                    // } else if($data['huruf']=='K') {
-                                    //     echo "Imunisasi";
-                                    // } else if($data['huruf']=='L') {
-                                    //     echo "Konseling";
-                                    // }
-                                ?>
-                            </span><br> -->
                             <span style="font-size:1em;">
                                 <?php
                                     $query = mysqli_query($konek, "SELECT * from tabelantrian  where id = '$nomor' ");
@@ -233,6 +198,7 @@
                                             $ruang = $_SESSION['ruang'];
                                             $no = $nomor;
                                             $edit = mysqli_query($konek, "UPDATE tabelantrian set loket = 'sudah' where nomor='$no' ");
+                                            $edit2 = mysqli_query($konek, "UPDATE tabelrekap set loket = 'sudah' where nomor='$no' ");
                                         ?>
                                         window.location='<?php print"$_SESSION[page]";?>';
                                     }

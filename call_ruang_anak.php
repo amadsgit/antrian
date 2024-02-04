@@ -108,6 +108,7 @@
             $tampilkan = mysqli_query($konek, "SELECT * from tabelantrian where loket = 'sudah' AND panggil = '0' AND huruf ='$_SESSION[huruf]' order by id asc");
             $data = mysqli_fetch_array($tampilkan);
             $nomor = $data['nomor'];
+            $nama = $data['nama'];
         ?>
         <section class="hero-section">
             <div class="container">
@@ -120,18 +121,20 @@
                     <div class="col-lg-6 col-12 mb-4 mb-lg-0">
                         <div class="custom-block2 text-center" style="justify-content: center;">
                             <span style="font-size:2em;">Nomor Antrian</span><br>
-                            <span style="font-size:8em;">
+                            <span>
                                 <?php
                                     if($nomor=='') {
-                                        print "<input type='text' class='text-center bg-white' style='border:none;width:200px;'' value='--' disabled></text>";
+                                        print "<input type='text' class='text-center bg-white' style='border:none;width:200px;'' value='--' disabled>";
                                         print "
                                         <script type='text/javascript'>
                                             var button = document.getElementById('call');
                                             button.disabled = true;
                                         </script>";
                                     } else {
-                                        // print"$_SESSION[huruf]-$nomor"; 
-                                        print"<input type='text' id='val_huruf' class='blink text-end text-primary bg-white' style='border:none;width:140px;font-weight:bold;' value='$_SESSION[huruf]' disabled></input class='blink text-primary'><span class='blink text-primary'>-</span><input type='text' id='val_nomor' class='blink text-start text-primary bg-white' style='border:none;width:200px;font-weight:bold;' value='$nomor' disabled></input>"; 
+                                        print"<input type='text' id='val_huruf' class='blink text-end text-primary bg-white' style='border:none;width:140px;font-weight:bold;font-size:8em;' value='$_SESSION[huruf]' disabled></input class='blink text-primary'>
+                                        <span class='blink text-primary' style='font-size:8em;'>-</span>
+                                        <input type='text' id='val_nomor' class='blink text-start text-primary bg-white' style='border:none;width:200px;font-weight:bold;font-size:8em;' value='$nomor' disabled></input>
+                                        <input type='text' id='val_nama' value='$data[nama]' style='font-size:20px;border:none' class='text-center text-primary' disabled>"; 
                                     }
                                 ?>
                             </span><br>
@@ -174,8 +177,8 @@
                                             <?php
                                                 $ruang = $_SESSION['ruang'];
                                                 $no = $nomor;
-
                                                 $edit = mysqli_query($konek, "UPDATE tabelantrian set panggil = 'sudah', ruang = '$ruang' where nomor='$no' ");
+                                                $edit2 = mysqli_query($konek, "UPDATE tabelrekap set panggil = 'sudah', ruang = '$ruang' where nomor='$no' ");
                                             ?>
                                             window.location='<?php print"$_SESSION[page]";?>';
                                         }

@@ -4,6 +4,7 @@
     include "koneksi.php";
     
     $huruf = $_GET['huruf'];
+    $nama = $_GET['nama'];
     $tampilkan = mysqli_query($konek, "select * from tabelantrian");
     $hitung = mysqli_num_rows($tampilkan);
     $nomor = $hitung + 1;
@@ -11,11 +12,12 @@
     $tanggal = date('d M Y');
     $waktu = date('H:i');
     
-    $input = mysqli_query($konek, "insert into tabelantrian (tanggal, waktu, nomor, huruf, loket, ruang, panggil) values ('$tanggal','$waktu','$nomor','$huruf', '0', '0', '0')");
+    $input = mysqli_query($konek, "INSERT INTO tabelantrian (tanggal, waktu, nama, nomor, huruf, loket, ruang, panggil, farmasi) values ('$tanggal','$waktu', '$nama', '$nomor','$huruf', '0', '0', '0', '0')");
+    $input2 = mysqli_query($konek, "INSERT INTO tabelrekap (tanggal, waktu, nama, nomor, huruf, loket, ruang, panggil, farmasi) values ('$tanggal','$waktu', '$nama', '$nomor','$huruf', '0', '0', '0', '0')");
     
-    if ($input)
+    if ($input&&$input2)
     {
-        print"<script>window.location='tampilcetak.php?nomor=$nomor&tanggal=$tanggal&waktu=$waktu&huruf=$huruf'</script>";
+        print"<script>window.location='printantrian.php?nomor=$nomor&tanggal=$tanggal&waktu=$waktu&nama=$nama&huruf=$huruf'</script>";
     }
 
     // var_dump($input);
