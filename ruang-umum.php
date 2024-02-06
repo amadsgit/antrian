@@ -1,15 +1,19 @@
 <?php
     include "koneksi.php";
     session_start();
-    $_SESSION['huruf']='C';
+    $_SESSION['huruf']='A';
     $_SESSION['panggil']='diruang';
     $_SESSION['loket']='Ruang';
-    $_SESSION['ruang']='MTBS';
-    $_SESSION['page']='call_ruang_mtbs.php';
-    // error_reporting(0);
+    $_SESSION['ruang']='Umum';
+    $_SESSION['page']='ruang-umum.php';
+    error_reporting(0);
+
 ?>
+
+
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -177,7 +181,6 @@
                                             <?php
                                                 $ruang = $_SESSION['ruang'];
                                                 $no = $nomor;
-
                                                 $edit = mysqli_query($konek, "UPDATE tabelantrian set panggil = 'sudah', ruang = '$ruang' where nomor='$no' ");
                                                 $edit2 = mysqli_query($konek, "UPDATE tabelrekap set panggil = 'sudah', ruang = '$ruang' where nomor='$no' ");
                                             ?>

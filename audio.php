@@ -49,15 +49,34 @@
         print"<audio id='audio5' src='audio/puluh.mp3' type='audio/mpeg' preload='auto'></audio>";
         print"<audio id='audio6' src='audio/$nomorb.mp3' type='audio/mpeg' preload='auto'></audio>";
     }
+    else if($jumlah==3 and $nomor < 110) {
+        print"<audio id='audio4' src='audio/seratus.mp3' type='audio/mpeg' preload='auto'></audio>";
+        print"<audio id='audio5' src='audio/$nomore.mp3' type='audio/mpeg' preload='auto'></audio>";
+    }
+    else if($jumlah==3 and $nomor == 110) {
+        print"<audio id='audio4' src='audio/seratus.mp3' type='audio/mpeg' preload='auto'></audio>";
+        print"<audio id='audio5' src='audio/10.mp3' type='audio/mpeg' preload='auto'></audio>";
+    }
+    else if($jumlah==3 and $nomor == 111) {
+        print"<audio id='audio4' src='audio/seratus.mp3' type='audio/mpeg' preload='auto'></audio>";
+        print"<audio id='audio5' src='audio/11.mp3' type='audio/mpeg' preload='auto'></audio>";
+    }
     else if($jumlah==3 and $nomor < 120) {
         print"<audio id='audio4' src='audio/seratus.mp3' type='audio/mpeg' preload='auto'></audio>";
         print"<audio id='audio5' src='audio/$nomore.mp3' type='audio/mpeg' preload='auto'></audio>";
+        print"<audio id='audio6' src='audio/belas.mp3' type='audio/mpeg' preload='auto'></audio>";
+    }
+    else if($jumlah==3 and $nomor > 119) {
+        print"<audio id='audio4' src='audio/seratus.mp3' type='audio/mpeg' preload='auto'></audio>";
+        print"<audio id='audio5' src='audio/$nomord.mp3' type='audio/mpeg' preload='auto'></audio>";
+        print"<audio id='audio6' src='audio/puluh.mp3' type='audio/mpeg' preload='auto'></audio>";
+        print"<audio id='audio7' src='audio/$nomore.mp3' type='audio/mpeg' preload='auto'></audio>";
     }
 
     ?>
 
-    <audio id="audio7" src="audio/<?php print"$_SESSION[panggil].mp3";?>" type="audio/mpeg" preload="auto"></audio>
-    <audio id='audio8' src='audio/<?php print"$_SESSION[ruang].mp3";?>' type='audio/mpeg' preload='auto'></audio>
+    <audio id="audio8" src="audio/<?php print"$_SESSION[panggil].mp3";?>" type="audio/mpeg" preload="auto"></audio>
+    <audio id='audio9' src='audio/<?php print"$_SESSION[ruang].mp3";?>' type='audio/mpeg' preload='auto'></audio>
 </div>
 
 <!-- function panggil pasien -->
@@ -70,7 +89,7 @@
             var val_tujuan = $('#val_tujuan').val()
             var val_nama = $('#val_nama').val()
             $.ajax({
-                url:'inputtampil.php',
+                url:'displayinput.php',
                 method:'GET',
                 data:{
                     val_huruf:val_huruf,
@@ -89,6 +108,7 @@
             var audio6 = document.getElementById('audio6');
             var audio7 = document.getElementById('audio7');
             var audio8 = document.getElementById('audio8');
+            var audio9 = document.getElementById('audio9');
 
             setTimeout(function() {document.getElementById('call').disabled = true}, 1000 );
             setTimeout(function() {document.getElementById('next').disabled = true}, 1000 );
@@ -100,6 +120,7 @@
             setTimeout(function() { audio6.play() }, 11000);
             setTimeout(function() { audio7.play() }, 12000);
             setTimeout(function() { audio8.play() }, 13000);
+            setTimeout(function() { audio9.play() }, 14000);
             setTimeout(function() {document.getElementById('call').disabled = false}, 16000 );
             setTimeout(function() {document.getElementById('next').disabled = false}, 16000 );
 

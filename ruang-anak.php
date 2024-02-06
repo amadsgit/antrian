@@ -1,11 +1,11 @@
 <?php
     include "koneksi.php";
     session_start();
-    $_SESSION['huruf']='E';
+    $_SESSION['huruf']='B';
     $_SESSION['panggil']='diruang';
     $_SESSION['loket']='Ruang';
-    $_SESSION['ruang']='lansia';
-    $_SESSION['page']='call_ruang_lansia.php';
+    $_SESSION['ruang']='Anak';
+    $_SESSION['page']='ruang-anak.php';
     // error_reporting(0);
 ?>
 <!doctype html>
@@ -177,7 +177,6 @@
                                             <?php
                                                 $ruang = $_SESSION['ruang'];
                                                 $no = $nomor;
-
                                                 $edit = mysqli_query($konek, "UPDATE tabelantrian set panggil = 'sudah', ruang = '$ruang' where nomor='$no' ");
                                                 $edit2 = mysqli_query($konek, "UPDATE tabelrekap set panggil = 'sudah', ruang = '$ruang' where nomor='$no' ");
                                             ?>

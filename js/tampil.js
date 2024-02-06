@@ -10,7 +10,7 @@ function selesai() {
 }
 
 function update() {
-	$.getJSON("loadtampil.php", function(data) {
+	$.getJSON("displayload.php", function(data) {
 		$(document.getElementById("valhuruf")).empty();
 		$(document.getElementById("valnomor")).empty();
 		$(document.getElementById("valunama")).empty();

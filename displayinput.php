@@ -13,6 +13,6 @@
     // $edit = mysqli_query($konek, "UPDATE tabelantrian set loket = 'sudah' where nomor='$val_nomor' ");
     $input = mysqli_query($konek, "INSERT INTO tabeltampil (id, huruf, nomor, nama, ruang, tujuan) VALUES (NULL, '$val_huruf', '$val_nomor', '$val_nama', '$val_ruang', '$val_tujuan')");
     if (($input) === TRUE) {
-        header("Location: http://localhost/antrian-puskesmas/show-screen.php");
+        header("Location: http://localhost/antrian-puskesmas/display.php");
     }
     ?>

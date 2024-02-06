@@ -1,11 +1,11 @@
 <?php
     include "koneksi.php";
     session_start();
-    $_SESSION['huruf']='B';
+    $_SESSION['huruf']='K';
     $_SESSION['panggil']='diruang';
     $_SESSION['loket']='Ruang';
-    $_SESSION['ruang']='Anak';
-    $_SESSION['page']='call_ruang_anak.php';
+    $_SESSION['ruang']='konseling';
+    $_SESSION['page']='ruang-konseling.php';
     // error_reporting(0);
 ?>
 <!doctype html>
@@ -138,7 +138,7 @@
                                     }
                                 ?>
                             </span><br>
-                            <input type="text" id="val_ruang" class='text-end bg-white' style="font-size:1.5em;border:none;width:150px;" value="<?= $_SESSION['loket'] ?>" disabled></input>
+                            <input type="text" id="val_ruang" class='text-end bg-white' style="font-size:1.5em;border:none;width:100px;" value="<?= $_SESSION['loket'] ?>" disabled></input>
                             <input type="text" id="val_tujuan" class='text-start bg-white' style="font-size:1.5em;border:none;width:140px;" value=" <?= $_SESSION['ruang'] ?>" disabled></input><br>
                             <span style="font-size:1em;">
                                 <?php
@@ -177,6 +177,7 @@
                                             <?php
                                                 $ruang = $_SESSION['ruang'];
                                                 $no = $nomor;
+
                                                 $edit = mysqli_query($konek, "UPDATE tabelantrian set panggil = 'sudah', ruang = '$ruang' where nomor='$no' ");
                                                 $edit2 = mysqli_query($konek, "UPDATE tabelrekap set panggil = 'sudah', ruang = '$ruang' where nomor='$no' ");
                                             ?>

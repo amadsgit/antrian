@@ -1,11 +1,11 @@
 <?php
     include "koneksi.php";
     session_start();
-    $_SESSION['huruf']='H';
+    $_SESSION['huruf']='L';
     $_SESSION['panggil']='diruang';
     $_SESSION['loket']='Ruang';
-    $_SESSION['ruang']='tindakan';
-    $_SESSION['page']='call_ruang_tindakan.php';
+    $_SESSION['ruang']='laboratorium';
+    $_SESSION['page']='ruang-laboratorium.php';
     // error_reporting(0);
 ?>
 <!doctype html>
@@ -139,7 +139,7 @@
                                 ?>
                             </span><br>
                             <input type="text" id="val_ruang" class='text-end bg-white' style="font-size:1.5em;border:none;width:100px;" value="<?= $_SESSION['loket'] ?>" disabled></input>
-                            <input type="text" id="val_tujuan" class='text-start bg-white' style="font-size:1.5em;border:none;width:140px;" value=" <?= $_SESSION['ruang'] ?>" disabled></input><br>
+                            <input type="text" id="val_tujuan" class='text-start bg-white' style="font-size:1.5em;border:none;width:180px;" value=" <?= $_SESSION['ruang'] ?>" disabled></input><br>
                             <span style="font-size:1em;">
                                 <?php
                                     $query = mysqli_query($konek, "SELECT * from tabelantrian  where id = '$nomor' ");
