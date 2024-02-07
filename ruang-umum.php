@@ -157,6 +157,7 @@
                     <div class="col-lg-6 col-12 mb-4 mb-lg-0">
                         <div class="custom-block text-center">
                             <div class="custom-block-info custom-block-overlay-info">
+                                <a href="laporan.php?huruf=A" target="_blank" type="button" class="btn btn-md btn-primary"><i class="fa-solid fa-file"></i> Laporan</a>
                                 <button id="call" type="button" class="btn btn-md btn-danger"><i class="fa-solid fa-volume-high"></i> Panggil</button> 
                                 <?php
                                     if($nomor=='') {

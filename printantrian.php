@@ -18,17 +18,17 @@
     <section class="sheet">
         <table style="padding-top:5px;" width="100%">
             <tr>
-                <td colspan="2" style="text-align:center;">UPTD PUSKESMAS CIKALAPA</td>
+                <td colspan="2" style="text-align:center;font-size:16px;">UPTD PUSKESMAS CIKALAPA</td>
             </tr>
             <tr>
-                <td align="center"><?php print"$tanggal";?></td>
-                <td align="center"><?php print"$waktu";?></td>
+                <td align="left" style="font-size:12px;"><?php print"$tanggal";?></td>
+                <td align="right" style="font-size:12px;"><?php print"$waktu";?></td>
             </tr>
             <tr>
-                <td colspan="2" align="center" style="font-size:40px;"><?php print"$huruf-$nomor";?></td>
+                <td colspan="2" align="center" style="font-size:60px;"><?php print"$huruf-$nomor";?></td>
             </tr>
             <tr>
-                <td colspan="2" align="center" style="font-size:14px;"><?php print"$nama";?> <hr></td>
+                <td colspan="2" align="center" style="font-size:16px;"><?php print"$nama";?> <hr></td>
             </tr>
             <tr>
                 <td colspan="2" align="center">silahkan menunggu antrian anda dipanggil <br>** Terima Kasih **</td>

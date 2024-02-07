@@ -1,3 +1,12 @@
+<?php
+include "koneksi.php";
+$huruf = $_GET['huruf'];
+    if ($huruf == 'A') {
+        $page = 'ruang-umum.php';
+        $halaman = 'Ruang Umum';
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,6 +36,7 @@
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Laman Panggil</a>
+        <!-- <a href="/antrian/<?= $page;?>" class="nav-link">Laman Panggil</a> -->
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Laporan</a>
@@ -76,7 +86,7 @@
           <img src="images/profile/foto.png" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Ruang Umum</a>
+          <a href="#" class="d-block"><?= $halaman;?></a>
         </div>
       </div>
 
@@ -159,34 +169,40 @@
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
-                  <tr>
-                    <th>No</th>
-                    <th>Browser</th>
-                    <th>Platform(s)</th>
-                    <th>Engine version</th>
-                    <th>CSS grade</th>
-                  </tr>
+                    <tr>
+                      <th>No</th>
+                      <th>Tanggal</th>
+                      <th>Waktu</th>
+                      <th>Nama Pasien</th>
+                      <th>Nomor Antrian</th>
+                      <th>Loket</th>
+                      <th>Ruang</th>
+                      <th>Status Panggil</th>
+                    </tr>
                   </thead>
                   <tbody>
-                  <tr>
-                    <td>Trident</td>
-                    <td>Internet
-                      Explorer 4.0
-                    </td>
-                    <td>Win 95+</td>
-                    <td> 4</td>
-                    <td>X</td>
-                  </tr>
+                  <?php
+                    $query = mysqli_query($konek, "SELECT * FROM tabelantrian WHERE huruf='$huruf' DESC");
+                    while ($row = mysqli_fetch_array($query)) {
+                      echo"<tr>
+                            <td>#</td>
+                            <td>$row[tanggal]</td>
+                            <td>Win 95+</td>
+                            <td> 4</td>
+                            <td>X</td>
+                          </tr>";
+                    }
+                  ?>
                   </tbody>
-                  <tfoot>
-                  <tr>
-                    <th>Rendering engine</th>
-                    <th>Browser</th>
-                    <th>Platform(s)</th>
-                    <th>Engine version</th>
-                    <th>CSS grade</th>
-                  </tr>
-                  </tfoot>
+                  <!-- <tfoot>
+                    <tr>
+                      <th>Rendering engine</th>
+                      <th>Browser</th>
+                      <th>Platform(s)</th>
+                      <th>Engine version</th>
+                      <th>CSS grade</th>
+                    </tr>
+                  </tfoot> -->
                 </table>
               </div>
               <!-- /.card-body -->
