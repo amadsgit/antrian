@@ -31,9 +31,8 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link href="css/templatemo-pod-talk.css" rel="stylesheet">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
+    <script src="plugins/jquery/jquery.min.js"></script>
     <style>
         .blink {
         animation: blink-animation 3s steps(5, start) infinite;
@@ -109,7 +108,7 @@
         </nav>
 
         <?php
-            $tampilkan = mysqli_query($konek, "SELECT * from tabelantrian where loket = 'sudah' AND panggil = '0' AND huruf ='$_SESSION[huruf]' order by id asc");
+            $tampilkan = mysqli_query($konek, "SELECT * from tabelantrian where loket = 'sudah' AND panggil = 'menunggu' AND huruf ='$_SESSION[huruf]' order by id asc");
             $data = mysqli_fetch_array($tampilkan);
             $nomor = $data['nomor'];
             $nama = $data['nama'];
@@ -182,15 +181,15 @@
                                             <?php
                                                 $ruang = $_SESSION['ruang'];
                                                 $no = $nomor;
-                                                $edit = mysqli_query($konek, "UPDATE tabelantrian set panggil = 'sudah', ruang = '$ruang' where nomor='$no' ");
-                                                $edit2 = mysqli_query($konek, "UPDATE tabelrekap set panggil = 'sudah', ruang = '$ruang' where nomor='$no' ");
+                                                $edit = mysqli_query($konek, "UPDATE tabelantrian set panggil = 'selesai' WHERE nomor='$no' ");
+                                                $edit2 = mysqli_query($konek, "UPDATE tabelrekap set panggil = 'selesai' WHERE nomor='$no' ");
                                             ?>
                                             window.location='<?php print"$_SESSION[page]";?>';
                                         }
                                     </script>
                                 
                                     <?php
-                                        $query = mysqli_query($konek, "SELECT * FROM tabelantrian WHERE panggil='0' AND loket = 'sudah' AND huruf ='$_SESSION[huruf]' ");
+                                        $query = mysqli_query($konek, "SELECT * FROM tabelantrian WHERE panggil='menunggu' AND loket = 'sudah' AND huruf ='$_SESSION[huruf]' ");
                                         $query2 = mysqli_query($konek, "SELECT * FROM tabelantrian WHERE loket = 'sudah' AND huruf ='$_SESSION[huruf]' ");
                                         $query3 = mysqli_query($konek, "SELECT * FROM tabelantrian");
                                         $data = mysqli_num_rows($query);
@@ -209,7 +208,7 @@
         <footer>
             <div class="container text-center pt-5">
                 <div class="row align-items-center">
-                        <p class="copyright-text mb-1 text-info">Copyright © 2024 AMD.dev | Mamad Ahmad</p>
+                        <p class="copyright-text mb-1 text-info">Copyright © 2024 AMD.dev | Ma2d Ahmad</p>
                 </div>
             </div>
         </footer>

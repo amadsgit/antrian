@@ -1,4 +1,5 @@
 <?php
+    error_reporting('0');
     include "koneksi.php";
     if($nomor==10) {
         $sepuluh;

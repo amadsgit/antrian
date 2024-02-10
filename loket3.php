@@ -1,7 +1,7 @@
 <?php
     include "koneksi.php";
     // error_reporting(0);
-    $tampilkan = mysqli_query($konek, "SELECT * from tabelantrian where loket = '0' order by id");
+    $tampilkan = mysqli_query($konek, "SELECT * from tabelantrian where loket = 'menunggu' order by id");
     $data = mysqli_fetch_array($tampilkan);
     $huruf = $data['huruf'];
     session_start();
@@ -33,11 +33,8 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link href="css/templatemo-pod-talk.css" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="https://path/to/font-awesome/css/font-awesome.min.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <!-- <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script> -->
-    <!-- <script src="js/jquery2.min.js"></script> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="plugins/jquery/jquery.min.js"></script>
     <style>
         .blink {
         animation: blink-animation 3s steps(5, start) infinite;
@@ -119,9 +116,36 @@
         </nav>
 
         <?php
-            $tampilkan = mysqli_query($konek, "SELECT * from tabelantrian where loket = '0' order by id");
+            $tampilkan = mysqli_query($konek, "SELECT * from tabelantrian where loket = 'menunggu' order by id");
             $data = mysqli_fetch_array($tampilkan);
             $nomor = $data['nomor'];
+            $huruf = $data['huruf'];
+            $tujuan = '';
+            if($huruf=="A"){
+                $tujuan="Ruang Umum";
+            } else if($huruf=="B"){
+                $tujuan="Ruang Anak";
+            } else if($huruf=="C"){
+                $tujuan="Ruang MTBS";
+            } else if($huruf=="D"){
+                $tujuan="Ruang KIA";
+            } else if($huruf=="E"){
+                $tujuan="Ruang Lansia";
+            } else if($huruf=="F"){
+                $tujuan="Ruang Prolanis";
+            } else if($huruf=="G"){
+                $tujuan="Ruang Gigi";
+            } else if($huruf=="H"){
+                $tujuan="Ruang Tindakan";
+            } else if($huruf=="I"){
+                $tujuan="Ruang Imunisasi";
+            } else if($huruf=="J"){
+                $tujuan="Ruang Pelangi";
+            } else if($huruf=="K"){
+                $tujuan="Ruang Konseling";
+            } else if($huruf=="L"){
+                $tujuan="Ruang Laboratorium";
+            }
         ?>
         <section class="hero-section">
             <div class="container">
@@ -146,7 +170,7 @@
                                     } else {
                                         $query = mysqli_query($konek, "SELECT * from tabelantrian where id = '$nomor' ");
                                         $data = mysqli_fetch_array($query);
-                                        print"<input type='text' id='val_huruf' class='text-end text-primary bg-white blink p-0 m-0' style='border:none;width:140px;font-weight:bold;font-size:100px' value='$data[huruf]' disabled></input><span class='text-primary blink' style='font-size:8em'>-</span><input type='text' id='val_nomor' class='text-start text-primary bg-white blink' style='border:none;width:200px;font-weight:bold;font-size:100px' value='$data[nomor]' disabled></input><br>
+                                        print"<input type='text' id='val_huruf' class='text-end text-primary bg-white blink p-0 m-0' style='border:none;width:140px;font-weight:bold;font-size:100px' value='$data[huruf]' disabled></input><span class='text-primary blink' style='font-size:8rem'>-</span><input type='text' id='val_nomor' class='text-start text-primary bg-white blink' style='border:none;width:200px;font-weight:bold;font-size:100px' value='$data[nomor]' disabled></input><br>
                                         <input type='text' id='val_nama' value='$data[nama]' style='font-size:20px;border:none' class='text-center text-primary' disabled>";
                                     }
                                 ?>
@@ -168,6 +192,7 @@
                             <div class="custom-block-info custom-block-overlay-info">
 
                                 <!-- button panggil antrian loket 1 -->
+                                <a href="laporanloket.php?loket=3" target="_blank" type="button" class="btn btn-md btn-primary"><i class="fa-solid fa-file"></i> Laporan</a>
                                 <button id="call" type="submit" class="btn btn-md btn-danger"><i class="fa-solid fa-volume-high"></i> Panggil</button> 
                                 <?php
                                     if($nomor=='') {
@@ -194,8 +219,16 @@
                                         <?php
                                             $ruang = $_SESSION['ruang'];
                                             $no = $nomor;
-                                            $edit = mysqli_query($konek, "UPDATE tabelantrian set loket = 'sudah' where nomor='$no' ");
-                                            $edit2 = mysqli_query($konek, "UPDATE tabelrekap set loket = 'sudah' where nomor='$no' ");
+                                            $edit = mysqli_query($konek, 
+                                            "UPDATE tabelantrian 
+                                             SET loket = 'sudah', ke_loket ='$ruang', ruang = '$tujuan'
+                                             WHERE nomor='$no' 
+                                            ");
+                                            $edit2 = mysqli_query($konek, 
+                                            "UPDATE tabelrekap
+                                             SET loket = 'sudah', ke_loket = '$ruang', ruang = '$tujuan'
+                                             WHERE nomor='$no' 
+                                            ");
                                         ?>
                                         window.location='<?php print"$_SESSION[page]";?>';
                                     }
@@ -203,7 +236,7 @@
 
                                 <!-- menampilkan sisa antrian -->
                                     <?php
-                                        $query = mysqli_query($konek, "SELECT * FROM tabelantrian WHERE loket='0' ");
+                                        $query = mysqli_query($konek, "SELECT * FROM tabelantrian WHERE loket='menunggu' ");
                                         $query3 = mysqli_query($konek, "SELECT * FROM tabelantrian");
                                         $data = mysqli_num_rows($query);
                                         $data3 = mysqli_num_rows($query3);
@@ -221,7 +254,7 @@
         <footer>
             <div class="container text-center pt-5">
                 <div class="row align-items-center">
-                        <p class="copyright-text mb-1 text-info">Copyright © 2024 AMD.dev | Mamad Ahmad</p>
+                        <p class="copyright-text mb-1 text-info">Copyright © 2024 AMD.dev | Ma2d Ahmad</p>
                 </div>
             </div>
         </footer>

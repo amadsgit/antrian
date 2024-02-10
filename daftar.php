@@ -104,7 +104,6 @@
                                 <img height="50px" src="images/profile/29.jpg" class="owl-carousel-image img-fluid" alt="">
                                 <div class="owl-carousel-info text-center">
                                     <h4 class="mb-2">Ruang Umum</h4>
-                                    <!-- <a href="inputantrian.php?huruf=A" target="_blank" class="btn btn-md btn-info">Cetak Kartu Antrian</a> -->
                                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modala">Cetak Antrian</button>
                                     <button type="button" class="btn btn-info position-relative">
                                     Mengantri
@@ -336,7 +335,7 @@
         <footer>
             <div class="container text-center pt-5">
                 <div class="row align-items-end">
-                    <p><a id="laporan" href="#" class="btn btn-sm btn-primary">Laporan</a> <a id="reset_notif" href="resetantrian.php" class="px-1 btn btn-sm btn-danger">Reset Antrian</a>
+                    <p><a id="laporan" href="laporanantrian.php" class="btn btn-sm btn-primary">Laporan</a> <a id="reset_notif" href="resetantrian.php" class="px-1 btn btn-sm btn-danger">Reset Antrian</a>
                     <?php
                     $query = mysqli_query($konek, "SELECT * FROM tabelantrian");
                     $data = mysqli_num_rows($query);

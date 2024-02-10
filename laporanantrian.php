@@ -1,45 +1,5 @@
 <?php
 include "koneksi.php";
-$huruf = $_GET['huruf'];
-$page = '';
-$halaman = '';
-    if ($huruf == 'A'){
-        $page = 'ruang-umum.php';
-        $halaman = 'Ruang Umum';
-    } else if($huruf == 'B'){
-      $page = 'ruang-anak.php';
-      $halaman = 'Ruang Anak';
-    } else if($huruf == 'C'){
-      $page = 'ruang-mtbs.php';
-      $halaman = 'Ruang MTBS';
-    } else if($huruf == 'D'){
-      $page = 'ruang-kia.php';
-      $halaman = 'Ruang KIA';
-    } else if($huruf == 'E'){
-      $page = 'ruang-lansia.php';
-      $halaman = 'Ruang Lansia';
-    } else if($huruf == 'F'){
-      $page = 'ruang-prolanis.php';
-      $halaman = 'Ruang Prolanis';
-    } else if($huruf == 'G'){
-      $page = 'ruang-gigi.php';
-      $halaman = 'Ruang Gigi';
-    } else if($huruf == 'H'){
-      $page = 'ruang-tindakan.php';
-      $halaman = 'Ruang Tindakan';
-    } else if($huruf == 'I'){
-      $page = 'ruang-imunisasi.php';
-      $halaman = 'Ruang Imunisasi';
-    } else if($huruf == 'J'){
-      $page = 'ruang-pelangi.php';
-      $halaman = 'Ruang Pelangi';
-    } else if($huruf == 'K'){
-      $page = 'ruang-konseling.php';
-      $halaman = 'Ruang Konseling';
-    } else if($huruf == 'L'){
-      $page = 'ruang-laboratorium.php';
-      $halaman = 'Ruang Laboratorium';
-    }
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +7,7 @@ $halaman = '';
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Laporan <?= $halaman;?></title>
+  <title>Laporan Antrian</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -70,8 +30,7 @@ $halaman = '';
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Laman Panggil</a>
-        <!-- <a href="/antrian/<?= $page;?>" class="nav-link">Laman Panggil</a> -->
+        <a href="daftar.php" class="nav-link">Laman Panggil</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Laporan</a>
@@ -121,7 +80,7 @@ $halaman = '';
           <img src="images/profile/foto.png" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block"><?= $halaman;?></a>
+          <a href="#" class="d-block">Rekap Antrian</a>
         </div>
       </div>
 
@@ -140,8 +99,6 @@ $halaman = '';
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -169,12 +126,10 @@ $halaman = '';
       </nav>
       <!-- /.sidebar-menu -->
     </div>
-    <!-- /.sidebar -->
   </aside>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
@@ -188,7 +143,7 @@ $halaman = '';
             </ol>
           </div>
         </div>
-      </div><!-- /.container-fluid -->
+      </div>
     </section>
 
     <!-- Main content -->
@@ -217,7 +172,7 @@ $halaman = '';
                   </thead>
                   <tbody>
                   <?php
-                    $sql = "SELECT tanggal, waktu, nama, huruf, nomor, loket, ke_loket, ruang, panggil FROM tabelrekap WHERE huruf='$huruf' ORDER BY id DESC";
+                    $sql = "SELECT tanggal, waktu, nama, huruf, nomor, loket, ke_loket, ruang, panggil FROM tabelrekap ORDER BY id DESC";
                     $result = mysqli_query($konek, $sql);
                     if ($result === FALSE) {
                       die(mysqli_error($konek));
@@ -244,39 +199,22 @@ $halaman = '';
                       </tr>
                   <?php $no++;  } ?>
                   </tbody>
-                  <!-- <tfoot>
-                    <tr>
-                      <th>Rendering engine</th>
-                      <th>Browser</th>
-                      <th>Platform(s)</th>
-                      <th>Engine version</th>
-                      <th>CSS grade</th>
-                    </tr>
-                  </tfoot> -->
                 </table>
               </div>
-              <!-- /.card-body -->
             </div>
-            <!-- /.card -->
           </div>
-          <!-- /.col -->
         </div>
-        <!-- /.row -->
       </div>
-      <!-- /.container-fluid -->
     </section>
-    <!-- /.content -->
   </div>
-  <!-- /.content-wrapper -->
+
   <footer class="main-footer">
     <div class="float-right d-none d-sm-block">
       <b>Version</b> 0.0.1
     </div>
     <strong>Copyright &copy; 2024 <a href="#">ADM.Dev</a>.</strong> Ma2d Ahmad.
   </footer>
-
 </div>
-<!-- ./wrapper -->
 
 <!-- jQuery -->
 <script src="plugins/jquery/jquery.min.js"></script>

@@ -1,44 +1,15 @@
 <?php
 include "koneksi.php";
-$huruf = $_GET['huruf'];
-$page = '';
-$halaman = '';
-    if ($huruf == 'A'){
-        $page = 'ruang-umum.php';
-        $halaman = 'Ruang Umum';
-    } else if($huruf == 'B'){
-      $page = 'ruang-anak.php';
-      $halaman = 'Ruang Anak';
-    } else if($huruf == 'C'){
-      $page = 'ruang-mtbs.php';
-      $halaman = 'Ruang MTBS';
-    } else if($huruf == 'D'){
-      $page = 'ruang-kia.php';
-      $halaman = 'Ruang KIA';
-    } else if($huruf == 'E'){
-      $page = 'ruang-lansia.php';
-      $halaman = 'Ruang Lansia';
-    } else if($huruf == 'F'){
-      $page = 'ruang-prolanis.php';
-      $halaman = 'Ruang Prolanis';
-    } else if($huruf == 'G'){
-      $page = 'ruang-gigi.php';
-      $halaman = 'Ruang Gigi';
-    } else if($huruf == 'H'){
-      $page = 'ruang-tindakan.php';
-      $halaman = 'Ruang Tindakan';
-    } else if($huruf == 'I'){
-      $page = 'ruang-imunisasi.php';
-      $halaman = 'Ruang Imunisasi';
-    } else if($huruf == 'J'){
-      $page = 'ruang-pelangi.php';
-      $halaman = 'Ruang Pelangi';
-    } else if($huruf == 'K'){
-      $page = 'ruang-konseling.php';
-      $halaman = 'Ruang Konseling';
-    } else if($huruf == 'L'){
-      $page = 'ruang-laboratorium.php';
-      $halaman = 'Ruang Laboratorium';
+$loket = $_GET['loket'];
+    if($loket == '1') {
+        $page = 'loket1.php';
+        $halaman = 'Loket 1';
+    } else if($loket == '2'){
+        $page = 'loket2.php';
+        $halaman = 'Loket 2';
+    } else if($loket == '3'){
+        $page = 'loket3.php';
+        $halaman = 'Loket 3';
     }
 ?>
 
@@ -217,7 +188,7 @@ $halaman = '';
                   </thead>
                   <tbody>
                   <?php
-                    $sql = "SELECT tanggal, waktu, nama, huruf, nomor, loket, ke_loket, ruang, panggil FROM tabelrekap WHERE huruf='$huruf' ORDER BY id DESC";
+                    $sql = "SELECT tanggal, waktu, nama, huruf, nomor, loket, ke_loket, ruang, panggil FROM tabelrekap WHERE ke_loket='$loket' ORDER BY id DESC";
                     $result = mysqli_query($konek, $sql);
                     if ($result === FALSE) {
                       die(mysqli_error($konek));
@@ -234,11 +205,11 @@ $halaman = '';
                         <td><?= $item['ke_loket']; ?></td>
                         <td><?= $item['ruang']; ?></td>
                         <td><?php 
-                          $panggil = $item['panggil'];
-                          if($panggil =='menunggu') {
-                            echo"<span class='badge bg-warning'>$panggil</span>";
+                          $loket = $item['loket'];
+                          if($loket =='menunggu') {
+                            echo"<span class='badge bg-warning'>$loket</span>";
                           } else {
-                            echo"<span class='badge bg-success'>$panggil</span>";
+                            echo"<span class='badge bg-success'>$loket</span>";
                           }
                         ?></td>
                       </tr>
