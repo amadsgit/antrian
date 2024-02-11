@@ -14,7 +14,7 @@
 /** Paper sizes **/
 
 body.struk.sheet {
-    width: 80mm;
+    width: 68mm;
 }
 
 body.struk.sheet {
@@ -52,7 +52,7 @@ body.struk.sheet {
         font-family: monospace;
     }
     .struk {
-        width: 80mm;
+        width: 68mm;
         text-align: left;
     }
     .struk.sheet {
