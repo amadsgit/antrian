@@ -167,7 +167,7 @@ include "koneksi.php";
                       <th>Nomor Antrian</th>
                       <th>Loket</th>
                       <th>Tujuan</th>
-                      <th>Status Panggil</th>
+                      <th>Status Antrian</th>
                     </tr>
                   </thead>
                   <tbody>
