@@ -12,13 +12,11 @@
     $tanggal = date('d M Y');
     $waktu = date('H:i');
     
-    $input = mysqli_query($konek, "INSERT INTO tabelantrian (tanggal, waktu, nama, nomor, huruf, loket, ke_loket, ruang, panggil, farmasi) values ('$tanggal', '$waktu', '$nama', '$nomor', '$huruf', 'menunggu', '0', '0', 'menunggu', '0')");
-    $input2 = mysqli_query($konek, "INSERT INTO tabelrekap (tanggal, waktu, nama, nomor, huruf, loket, ke_loket, ruang, panggil, farmasi) values ('$tanggal', '$waktu', '$nama', '$nomor', '$huruf', 'menunggu', '0', '0', 'menunggu', '0')");
+    $input = mysqli_query($konek, "INSERT INTO tabelantrian (tanggal, waktu, nama, nomor, huruf, loket, ke_loket, ruang, panggil, farmasi) values ('$tanggal', '$waktu', '$nama', '$nomor', '$huruf', 'menunggu', '0', '0', 'menunggu', 'menunggu')");
+    $input2 = mysqli_query($konek, "INSERT INTO tabelrekap (tanggal, waktu, nama, nomor, huruf, loket, ke_loket, ruang, panggil, farmasi) values ('$tanggal', '$waktu', '$nama', '$nomor', '$huruf', 'menunggu', '0', '0', 'menunggu', 'menunggu')");
     
     if ($input&&$input2)
     {
         print"<script>window.location='printantrian.php?nomor=$nomor&tanggal=$tanggal&waktu=$waktu&nama=$nama&huruf=$huruf'</script>";
     }
-
-    // var_dump($input);
     ?>

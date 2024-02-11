@@ -23,10 +23,9 @@
 ?>
 
 <div id="audioplay">
-    <audio id="audio1" src="audio/bell.mp3" type="audio/mpeg" preload="auto"></audio>
-    <audio id="audio2" src="audio/nomorantrian.mp3" type="audio/mpeg" preload="auto"></audio>
-
-    <audio id='audio3' src='audio/<?php print"$_SESSION[huruf].mp3";?>' type='audio/mpeg' preload='auto'></audio>
+    <audio id='audio1' src='audio/bell.mp3' type='audio/mpeg' preload='auto'></audio>
+    <audio id='audio2' src='audio/nomorantrian.mp3' type='audio/mpeg' preload='auto'></audio>
+    <audio id='audio3' src='audio/<?php print"$_SESSION[huruf]";?>.mp3' type='audio/mpeg' preload='auto'></audio>
 
     <?php
     if($jumlah==1) {
@@ -76,8 +75,8 @@
 
     ?>
 
-    <audio id="audio8" src="audio/<?php print"$_SESSION[panggil].mp3";?>" type="audio/mpeg" preload="auto"></audio>
-    <audio id='audio9' src='audio/<?php print"$_SESSION[ruang].mp3";?>' type='audio/mpeg' preload='auto'></audio>
+    <audio id="audio8" src='audio/<?php print"$_SESSION[panggil]";?>.mp3' type='audio/mpeg' preload='auto'></audio>
+    <audio id='audio9' src='audio/<?php print"$_SESSION[ruang]";?>.mp3' type='audio/mpeg' preload='auto'></audio>
 </div>
 
 <!-- function panggil pasien -->
@@ -127,6 +126,5 @@
 
         });
     });
-
 </script>
 
