@@ -12,9 +12,9 @@
 
 
 /** Paper sizes **/
-
 body.struk.sheet {
     width: 68mm;
+    height: 45mm;
 }
 
 body.struk.sheet {
@@ -35,7 +35,6 @@ body.struk.sheet {
 
 
 /** For screen preview **/
-
 @media screen {
     .sheet {
         background: white;
@@ -46,13 +45,13 @@ body.struk.sheet {
 
 
 /** Fix for Chrome issue #273306 **/
-
 @media print {
     body {
         font-family: monospace;
     }
     .struk {
         width: 68mm;
+        height: 45mm;
         text-align: left;
     }
     .struk.sheet {

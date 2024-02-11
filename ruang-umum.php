@@ -298,19 +298,20 @@
                                     });
                                 </script>
 
-                                 <button id="next" onclick="panggil_loket()" class="btn btn-md btn-success mt-3"><i class="fa-solid fa-arrow-right"></i> Selanjutnya</button> <br><br>
-                                    <!-- function panggil selanjutnya untuk loket -->
-                                    <script>
+                                <!-- function panggil selanjutnya untuk loket -->
+                                <script>
                                     // function panggil selanjutnya untuk ruang poli
-                                        function panggil_loket() {
-                                            <?php
-                                                $no = $nomor;
-                                                $edit = mysqli_query($konek, "UPDATE tabelantrian SET panggil = 'selesai' WHERE nomor='$no' ");
-                                                $edit2 = mysqli_query($konek, "UPDATE tabelrekap SET panggil = 'selesai' WHERE nomor='$no' ");
-                                            ?>
-                                            window.location='<?php print"$_SESSION[page]";?>';
-                                        }
-                                    </script>
+                                    function panggil_loket() {
+                                        <?php
+                                        $no = $nomor;
+                                        $edit = mysqli_query($konek, "UPDATE tabelantrian SET panggil = 'selesai' WHERE nomor='$no' ");
+                                        $edit2 = mysqli_query($konek, "UPDATE tabelrekap SET panggil = 'selesai' WHERE nomor='$no' ");
+                                        // exit();
+                                        ?>
+                                    window.location='<?php print"$_SESSION[page]";?>';
+                                }
+                                </script>
+                                <button id="next" onclick="panggil_loket()" class="btn btn-md btn-success mt-3"><i class="fa-solid fa-arrow-right"></i> Selanjutnya</button> <br><br>
                                 
                                     <?php
                                         $query = mysqli_query($konek, "SELECT * FROM tabelantrian WHERE panggil='menunggu' AND loket = 'sudah' AND huruf ='$huruf' ");
